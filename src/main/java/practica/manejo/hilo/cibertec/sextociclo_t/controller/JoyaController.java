@@ -16,10 +16,15 @@ public class JoyaController {
     public JoyaController(JoyaService joyaService) {
         this.joyaService = joyaService;
     }
+
     @GetMapping("/crear-joyas-async")
     public String crearJoyasAsync() throws InterruptedException, IOException {
+        // Ejecutar las funciones asíncronamente
+        joyaService.crearJoya1();  // Demora de 10 segundos
+        joyaService.crearJoya2();  // Demora de 5 segundos
+        joyaService.crearJoya3();  // Demora de 7 segundos
 
-
-    return "";}
+        return "Las funciones de creación de joyas se están ejecutando de manera asíncrona.";
+    }
 }
 
