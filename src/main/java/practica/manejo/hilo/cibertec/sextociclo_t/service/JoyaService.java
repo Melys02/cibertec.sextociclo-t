@@ -51,6 +51,13 @@ public class JoyaService {
         crearArchivoConDemora(5, "joya2.txt");
     }
 
+    // Crear archivo con 7 segundos de demora
+    @Async
+    public void crearJoya3() throws InterruptedException, IOException {
+        crearArchivoConDemora(7, "joya3.txt");
+    }
+
+
 
 
 
