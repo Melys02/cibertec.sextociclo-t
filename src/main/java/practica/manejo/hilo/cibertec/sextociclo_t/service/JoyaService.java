@@ -1,13 +1,14 @@
 package practica.manejo.hilo.cibertec.sextociclo_t.service;
 
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
-
+@Service
 public class JoyaService {
 
     // Método para generar información aleatoria de una joya

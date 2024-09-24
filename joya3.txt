@@ -1,0 +1,4 @@
+Información de la joya:
+Tipo: Anillo
+Material: Esmeralda
+Precio: $164.01

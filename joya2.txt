@@ -1,0 +1,4 @@
+Información de la joya:
+Tipo: Broche
+Material: Diamante
+Precio: $1073.99
