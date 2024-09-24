@@ -1,5 +1,9 @@
 package practica.manejo.hilo.cibertec.sextociclo_t.service;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class JoyaService {
@@ -14,6 +18,22 @@ public class JoyaService {
 
         return "Tipo: " + tipo + "\nMaterial: " + material + "\nPrecio: $" + String.format("%.2f", precio);
     }
+
+    // Método para crear archivo con demora
+    private void crearArchivoConDemora(int delayInSeconds, String fileName) throws InterruptedException, IOException {
+        // Simular la demora
+        Thread.sleep(delayInSeconds * 1000);
+
+        // Crear archivo con información aleatoria sobre una joya
+        File file = new File(fileName);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            String informacionJoya = generarInformacionJoya();
+            writer.write("Información de la joya:\n" + informacionJoya);
+        }
+
+        System.out.println("Archivo de joya creado: " + fileName);
+    }
+
 
 
 
