@@ -1,5 +1,7 @@
 package practica.manejo.hilo.cibertec.sextociclo_t.service;
 
+import org.springframework.scheduling.annotation.Async;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -19,6 +21,8 @@ public class JoyaService {
         return "Tipo: " + tipo + "\nMaterial: " + material + "\nPrecio: $" + String.format("%.2f", precio);
     }
 
+
+
     // Método para crear archivo con demora
     private void crearArchivoConDemora(int delayInSeconds, String fileName) throws InterruptedException, IOException {
         // Simular la demora
@@ -32,7 +36,15 @@ public class JoyaService {
         }
 
         System.out.println("Archivo de joya creado: " + fileName);
+
     }
+
+    // Crear archivo con 10 segundos de demora
+    @Async
+    public void crearJoya1() throws InterruptedException, IOException {
+        crearArchivoConDemora(10, "joya1.txt");
+    }
+
 
 
 
